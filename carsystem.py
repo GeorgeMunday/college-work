@@ -12,6 +12,7 @@ def binary_search(list2, search_value):
         else: 
             list_end = mid - 1  # Search the left half 
     return False  # Value not found 
+    
 def main(): 
     # Generate a sorted list of 10 unique numbers between 1 and 19 
     list2 = sorted(random.sample(range(1, 20), 10)) 
@@ -26,7 +27,8 @@ def main():
                 print(f"You entered the number {search_value}") 
                 break  # Exit the inner loop if input is valid 
             else: 
-                print("You did not enter a valid number. Please try again.") 
+                print("You did not enter a valid number. Please try again.")
+
         # Record the start time of the binary search 
         start_time = time.time() 
         # Perform binary search 
