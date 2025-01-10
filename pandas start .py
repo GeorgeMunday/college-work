@@ -25,7 +25,8 @@ myvar = pd.Series(a)
 
 # Printing the pandas Series to view the data
 print(myvar)
-
+# printing what is in position 0
+print(myvar[0])
 # Creating a dictionary 'dat' with 'calories' and 'duration' data for 3 days
 dat = {
     "calories": [420, 380, 390],
