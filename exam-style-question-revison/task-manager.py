@@ -1,16 +1,52 @@
-def add_delete_tasks():
-    choice = input("Would you like to add or delete a task?")
+tasks = {
+    "task_list": [],
+    "task_time": []
+}
+
+def add_tasks():
+    choice = input("what task would you like to add").lower().strip()
+    while True:
+        try:
+            task_time = int(input("Enter the time for the task: "))
+            tasks["task_list"].append(choice)
+            tasks["task_time"].append(task_time)
+            break
+        except ValueError:
+            print("please enter a number")
+
+def delete_task():
+    choice = ("what task would you like to delete")
 
 def view_tasks():
-    choice = input("")
+    print(tasks)
 
+
+    
 def access_granted():
     print("Welcome to task manager. What would you like to do?")
     options = {
-        1: add_delete_tasks,
-        2: "Delete Task",
+        1: add_tasks,
+        2: delete_task,
         3: view_tasks
     }
+    while True:
+        print("\nOptions:")
+        print("1. Add Task")
+        print("2. Delete Task")
+        print("3. View Tasks")
+        print("4. Exit")
+        
+        try:
+            choice = int(input("Enter your choice: "))
+            if choice == 4:
+                print("Exiting task manager.")
+                break
+            elif choice in options:
+                options[choice]()
+            else:
+                print("Invalid choice. Please try again.")
+        except ValueError:
+            print("Invalid input. Please enter a number.")
 
 def main():
     usernames = ["user1", "user2", "user3"]
